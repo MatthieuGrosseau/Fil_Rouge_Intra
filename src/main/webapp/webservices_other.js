@@ -84,11 +84,11 @@
 		tempId.value = contenuJSON[i].codeCategorie;
 		tempDes.value = contenuJSON[i].description 
 		
-		var btn_modifier = clone.querySelector('#btn_modifier_o_c');
-		btn_modifier.setAttribute("onclick", "update_O_c("+contenuJSON[i].codeCategorie+")");
+		var btn_modifier_o_c = clone.querySelector('#btn_modifier_o_c');
+		btn_modifier_o_c.setAttribute("onclick", "update_O_c("+contenuJSON[i].codeCategorie+")");
 		
-		var btn_supprimer = clone.querySelector('#btn_supprimer_o_c');
-		btn_supprimer.setAttribute("onclick", "delete_O_c("+contenuJSON[i].codeCategorie+")");
+		var btn_supprimer_o_c = clone.querySelector('#btn_supprimer_o_c');
+		btn_supprimer_o_c.setAttribute("onclick", "delete_O_c("+contenuJSON[i].codeCategorie+")");
 		
 		
 		tbody_liste_o_c.appendChild(clone);
@@ -224,13 +224,14 @@
 		}
 	}
 
+	var Id = document.getElementById('form_id_o_e').value;
 	var Des = document.getElementById('form_description_o_e').value;
 	
 	var data = 
-	+ "&description=" + Des
+	'{"codeEtat":"' + Id + '","description":"' + Des +'"}'
 			
 	request.open("POST", "http://localhost:8080/FilRougeIntra/rest/autres/etats/", true);
-	request.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+	request.setRequestHeader("Content-type", "application/json");
 	request.send(data);
 }
 
@@ -245,14 +246,14 @@
 			}
 		}
 	}
-
+	var Id = document.getElementById('form_id_o_v').value;
 	var Des = document.getElementById('form_description_o_v').value;
 	
 	var data = 
-	+ "&description=" + Des
+	'{"codeVersion":"' + Id + '","description":"' + Des +'"}'
 			
 	request.open("POST", "http://localhost:8080/FilRougeIntra/rest/autres/film_versions/", true);
-	request.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+	request.setRequestHeader("Content-type", "application/json");
 	request.send(data);
 }
 
@@ -268,13 +269,14 @@
 		}
 	}
 
+	var Id = document.getElementById('form_id_o_p').value;
 	var Des = document.getElementById('form_description_o_p').value;
 	
 	var data = 
-	+ "&description=" + Des
+	'{"codePegi":"' + Id + '","description":"' + Des +'"}'
 			
 	request.open("POST", "http://localhost:8080/FilRougeIntra/rest/autres/pegi/", true);
-	request.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+	request.setRequestHeader("Content-type", "application/json");
 	request.send(data);
 }
 
@@ -289,17 +291,17 @@ function update_O_c(id){
 			}
 		}
 	}
+
 	
 	var Id = document.getElementById('other_c_id' +id).value;
 	var Des = document.getElementById('other_c_description' +id).value;
 	
 	
 	var data = 
-	"id="+ Id 
-	+ "&description=" + Des
+	'{"codeCategorie":"' + Id + '","description":"' + Des +'"}'
 		
-	request.open("PUT", "http://localhost:8080/FilRougeIntra/rest/autres/categories/" + id, true);
-	request.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+	request.open("PUT", "http://localhost:8080/FilRougeIntra/rest/autres/categories/", true);
+	request.setRequestHeader("Content-type", "json");
 	request.send(data);
 }
 
@@ -320,11 +322,10 @@ function update_O_e(id){
 	
 	
 	var data = 
-	"id="+ Id 
-	+ "&description=" + Des
+	'{"codeEtat":"' + Id + '","description":"' + Des +'"}'
 		
 	request.open("PUT", "http://localhost:8080/FilRougeIntra/rest/autres/etats/" + id, true);
-	request.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+	request.setRequestHeader("Content-type", "json");
 	request.send(data);
 }
 
@@ -345,11 +346,10 @@ function update_O_v(id){
 	
 	
 	var data = 
-	"id="+ Id 
-	+ "&description=" + Des
+	'{"codeVersion":"' + Id + '","description":"' + Des +'"}'
 		
 	request.open("PUT", "http://localhost:8080/FilRougeIntra/rest/autres/film_versions/" + id, true);
-	request.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+	request.setRequestHeader("Content-type", "application/json");
 	request.send(data);
 }
 
@@ -370,11 +370,10 @@ function update_O_p(id){
 	
 	
 	var data = 
-	"id="+ Id 
-	+ "&description=" + Des
+	'{"codePegi":"' + Id + '","description":"' + Des +'"}'
 		
 	request.open("PUT", "http://localhost:8080/FilRougeIntra/rest/autres/pegi/" + id, true);
-	request.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+	request.setRequestHeader("Content-type", "application/json");
 	request.send(data);
 }
 
