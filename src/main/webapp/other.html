@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Autres attributs</title>
+<script src='webservices_other.js'></script>
+<link rel="stylesheet" href="main.css" />
+</head>
+<body onload="charger_liste_O_c(); charger_liste_O_e(); charger_liste_O_v(); charger_liste_O_p();" >
+
+<!-- header -->
+	<header>
+       <nav>
+      <div id="titre_principal">
+        <div id="logo">
+          <img src="images/Logo.png" alt="Logo des cinemas Rilletthes" />
+          <h1>Cinemas Rilletthes</h1>
+        </div>
+      </div>
+      <div id="navigation">
+      <a href="accueil.html">Accès à l'accueil</a>
+      </div>
+       </nav>
+	</header>
+
+<!-- main -->
+	<section id="main">
+
+		<!-- division message -->
+		<div id="message">
+			
+			<p id="message_holder"></p>
+			
+		</div>
+
+	<!-- division autres -->
+	<h2>Liste des autres</h2>
+       
+	<!-- Liste des autres avec le template -->
+	
+		<div id="list_other_c">
+
+			<fieldset class="Liste des categories">
+	      	<legend>Liste des categories</legend>
+				<div class="tableau">		              
+		   			<table>	                
+            			<thead>          	           
+            				<tr>         	             
+			            		<th>id</th>			            		
+			            		<th>description</th>	            		
+ 							</tr>
+ 						</thead>
+ 						
+ 						<tbody 
+ 						id="liste_o_c">
+ 						</tbody>
+ 						
+ 	          		</table>
+     			</div>
+			</fieldset>
+	
+		</div>	
+		
+		<div id="list_other_e">
+
+			<fieldset class="Liste des etats">
+	      	<legend>Liste des etats</legend>
+				<div class="tableau">		              
+		   			<table>	                
+            			<thead>          	           
+            				<tr>         	             
+			            		<th>id</th>			            		
+			            		<th>description</th>	            		
+ 							</tr>
+ 						</thead>
+ 						
+ 						<tbody 
+ 						id="liste_o_e">
+ 						</tbody>
+ 						
+ 	          		</table>
+     			</div>
+			</fieldset>
+	
+		</div>	
+		
+		<div id="list_other_v">
+
+			<fieldset class="Liste des versions">
+	      	<legend>Liste des versions</legend>
+				<div class="tableau">		              
+		   			<table>	                
+            			<thead>          	           
+            				<tr>         	             
+			            		<th>id</th>			            		
+			            		<th>description</th>	            		
+ 							</tr>
+ 						</thead>
+ 						
+ 						<tbody 
+ 						id="liste_o_v">
+ 						</tbody>
+ 						
+ 	          		</table>
+     			</div>
+			</fieldset>
+	
+		</div>	
+	
+		<div id="list_other_p">
+
+			<fieldset class="Liste des pegi">
+	      	<legend>Liste des pegi</legend>
+				<div class="tableau">		              
+		   			<table>	                
+            			<thead>          	           
+            				<tr>         	             
+			            		<th>id</th>			            		
+			            		<th>description</th>	            		
+ 							</tr>
+ 						</thead>
+ 						
+ 						<tbody 
+ 						id="liste_o_p">
+ 						</tbody>
+ 						
+ 	          		</table>
+     			</div>
+			</fieldset>
+	
+		</div>	
+
+	<!-- Formulaire d'ajout autre -->
+	
+	<div class="my_form">
+        <h2>Ajouter une autre catégorie</h2>
+         <input type="text" id="form_id_o_c" placeholder="code Categorie"/>
+        <textarea id="form_description_o_c" placeholder="description"></textarea>
+                <input type="button" value="ajouter" onclick="add_O_c()" />
+    </div>
+    
+   	<div class="my_form">
+        <h2>Ajouter un autre etat</h2>
+        <textarea id="form_description_o_e" placeholder="description"></textarea>
+                <input type="button" value="ajouter" onclick="add_O_e()" />
+    </div> 		
+
+	<div class="my_form">
+        <h2>Ajouter une autre version</h2>
+        <textarea id="form_description_o_v" placeholder="description"></textarea>
+                <input type="button" value="ajouter" onclick="add_O_v()" />
+    </div>
+    
+    <div class="my_form">
+        <h2>Ajouter un autre pegi</h2>
+        <textarea id="form_description_o_p" placeholder="description"></textarea>
+                <input type="button" value="ajouter" onclick="add_O_p()" />
+    </div>
+</section>
+
+	<!-- footer -->
+<footer>
+
+	<p>Les Cinémas Rhillettes © 2022- Tous droits réservés ®</p>
+
+</footer>
+
+	<!-- Template Liste autres --> 			 					
+ 		<template id="other_c_template"> 				
+            		
+              				<tr>
+		              			<td><input type="text" id="other_c_id"/></td>
+								<td><input type="text" id="other_c_description"/></td>					
+								<td><input type="button" value="modifier" id="btn_modifier_o_c"/></td>
+								<td><input type="button" value="supprimer" id="btn_supprimer_o_c"/></td>	
+                			</tr>
+            			
+         </template>
+         
+        		<template id="other_e_template"> 				
+            		
+              				<tr>
+		              			<td><input type="text" id="other_e_id"/></td>
+								<td><input type="text" id="other_e_description"/></td>						
+								<td><input type="button" value="modifier" id="btn_modifier_o_e"/></td>
+								<td><input type="button" value="supprimer" id="btn_supprimer_o_e"/></td>	
+                			</tr>
+            			
+         </template>
+         
+         		<template id="other_v_template"> 				
+            		
+              				<tr>
+		              			<td><input type="text" id="other_v_id"/></td>
+								<td><input type="text" id="other_v_description"/></td>						
+								<td><input type="button" value="modifier" id="btn_modifier_o_v"/></td>
+								<td><input type="button" value="supprimer" id="btn_supprimer_o_v"/></td>	
+                			</tr>
+            			
+         </template>
+         
+         		<template id="other_p_template"> 				
+            		
+              				<tr>
+		              			<td><input type="text" id="other_p_id"/></td>
+								<td><input type="text" id="other_p_description"/></td>						
+								<td><input type="button" value="modifier" id="btn_modifier_o_p"/></td>
+								<td><input type="button" value="supprimer" id="btn_supprimer_o_p"/></td>	
+                			</tr>
+            			
+         </template>
+
+</body>
+</html>

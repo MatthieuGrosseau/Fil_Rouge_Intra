@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Accueil FilRouge Intra</title>
+<script src='webservices.js'></script>
+<link rel="stylesheet" href="main.css" />
+</head>
+<body onload="charger_listeF()">
+	
+	<!-- header -->
+	<header>
+       <nav>
+      <div id="titre_principal">
+        <div id="logo">
+          <img src="images/Logo.png" alt="Logo des cinemas Rilletthes" />
+          <h1>Cinemas Rilletthes</h1>
+        </div>
+      </div>
+      <div id="navigation">
+      <a href="other.html">Accès aux autres attributs</a>
+      </div>
+       </nav>
+	</header>
+	
+
+	<!-- main -->
+	<section id="main">
+
+		<!-- division message -->
+		<div id="message">
+			
+			<p id="message_holder"></p>
+			
+		</div>
+
+	<!-- division films -->
+	<h2>Liste des films</h2>
+       
+	<!-- Liste des films avec le template -->
+	
+		<div id="list_film">
+
+			<fieldset class="Liste des films">
+	      	<legend>Liste des films</legend>
+				<div class="tableau">		              
+		   			<table>	                
+            			<thead>          	           
+            				<tr>         	             
+			            		<th>id</th>
+			            		<th>nom</th>
+			            		<th>description</th>
+			            		<th>durée</th>
+			            		<th>PEGI</th>
+			            		<th>Categorie</th>
+			            		<th>Etat</th>
+			            		<th>Version</th>
+			            		<th>Code Image</th>
+			            		<th>Date Création</th>
+			            		<th>Date Modification</th>
+ 							</tr>
+ 						</thead>
+ 						
+ 						<tbody 
+ 						id="liste_f">
+ 						</tbody>
+ 						
+ 	          		</table>
+     			</div>
+			</fieldset>
+	
+		</div>	
+
+		
+	<!-- Formulaire d'ajout de film -->
+	
+	<div class="my_form">
+        <h2>Ajouter un film</h2>
+        <input type="text" id="form_nom" placeholder="titre du film"/>
+        <textarea id="form_description" placeholder="description du film"></textarea>
+        <input type="text" id="form_duree" placeholder="durée"/>
+        <input type="text" id="form_pegi" placeholder="pegi"/>
+        <input type="text" id="form_categorie" placeholder="catégorie"/>
+        <input type="text" id="form_etat" placeholder="état"/>
+        <input type="text" id="form_version" placeholder="version"/>
+        <input type="text" id="form_codeImage" placeholder="code Image"/>
+        <input type="button" value="ajouter un film" onclick="add_F()" />
+    </div>		
+
+</section>
+
+	<!-- footer -->
+<footer>
+
+	<p>Les Cinémas Rhillettes © 2022- Tous droits réservés ®</p>
+
+</footer>
+ 	
+	<!-- Template Liste de films --> 			 					
+ 		<template id="film_template"> 				
+            		
+              				<tr>
+		              			<td><input type="text" id="temp_id"/></td>
+								<td><input type="text" id="temp_nom"/></td>
+								<td><input type="text" id="temp_description"/></td>
+								<td><input type="text" id="temp_duree"/></td>
+								<td><input type="text" id="temp_pegi"/></td>
+								<td><input type="text" id="temp_categorie"/></td>
+								<td><input type="text" id="temp_etat"/></td>
+								<td><input type="text" id="temp_version"/></td>
+								<td><input type="text" id="temp_codeImage"/></td>
+								<td id="temp_dateCrea"></td>
+								<td id="temp_dateModif"></td>
+								<td><input type="button" value="modifier un film" id="btn_modifier"/></td>
+								<td><input type="button" value="supprimer un film" id="btn_supprimer"/></td>	
+                			</tr>
+            			
+         </template>
+
+  
+</body>
+</html>
